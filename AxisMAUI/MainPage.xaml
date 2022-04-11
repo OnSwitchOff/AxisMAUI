@@ -4,31 +4,42 @@
              BackgroundColor="{DynamicResource SecondaryColor}">
 
     <ScrollView>
-        <Grid RowSpacing="25" RowDefinitions="Auto,Auto,Auto,Auto,*"
+        <Grid RowSpacing="25" RowDefinitions="Auto,Auto,Auto,Auto,*,Auto,Auto,Auto,Auto,Auto,Auto,Auto,*,Auto,Auto,Auto,Auto,Auto,Auto,Auto,*,Auto,Auto,Auto,Auto"
               Padding="{OnPlatform iOS='30,60,30,30', Default='30'}">
 
-            <Label 
-                Text="Hello, World!"
-                Grid.Row="0"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
 
-            <Label 
-                Text="Welcome to .NET Multi-platform App UI"
-                Grid.Row="1"
-                SemanticProperties.HeadingLevel="Level1"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
-                HorizontalOptions="Center" />
+            <Border Stroke="#C49B33"
+                    Grid.Row="0"
+                    StrokeThickness="4"
+                    Background="#2B0B98"
+                    Padding="16,8"
+                    HorizontalOptions="Center">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="40,0,0,40" />
+                            </Border.StrokeShape>
+                            <Label Text=".NET MAUI"
+                        TextColor="White"
+                        FontSize="18"
+                        FontAttributes="Bold" />
+            </Border>
 
-            <Label 
-                Text="Current count: 0"
-                Grid.Row="2"
-                FontSize="18"
-                FontAttributes="Bold"
-                x:Name="CounterLabel"
-                HorizontalOptions="Center" />
+
+            <BoxView Color="CornflowerBlue"
+                     Grid.Row="1"
+                     CornerRadius="10"
+                     WidthRequest="160"
+                     HeightRequest="160"
+                     VerticalOptions="Center"
+                     HorizontalOptions="Center">    
+            </BoxView>
+
+            <Frame BorderColor="Gray"
+                 Grid.Row="2"
+                 CornerRadius="10">
+                <Label Text="Frame wrapped around a Label" />
+            </Frame>
+
+
 
             <Button 
                 Text="Click me"
@@ -44,6 +55,68 @@
                 HeightRequest="310"
                 HorizontalOptions="Center" />
 
+            <WebView  Grid.Row="5" Source="https://docs.microsoft.com/dotnet/maui" HeightRequest="100"/>
+
+            <StackLayout Grid.Row="6">
+                <Label Text="What's your favorite animal?" />
+                <RadioButton Content="Cat" />
+                <RadioButton Content="Dog" />
+                <RadioButton Content="Elephant" />
+                <RadioButton Content="Monkey"
+                 IsChecked="true" />
+            </StackLayout>
+
+            <SearchBar Grid.Row="7" Placeholder="Search items..." />
+
+            <CheckBox Grid.Row="8"  IsChecked="true" />
+
+            <DatePicker  Grid.Row="9" MinimumDate="01/01/2022"
+            MaximumDate="12/31/2022"
+            Date="06/21/2022" />
+
+            <Slider Maximum="360" Grid.Row="10" />
+
+            <Stepper x:Name="_stepper"
+                     Grid.Row="11"
+                 Maximum="360"
+                 Increment="30"
+                 HorizontalOptions="Center" />
+
+            <Switch  Grid.Row="12" IsToggled="true"/>
+            <TimePicker Grid.Row="13" Time="4:15:26" TextColor="red" />
+
+            <Editor x:Name="editor"
+                    Grid.Row="14"
+                    Placeholder="Enter your response here"
+                    HeightRequest="250" />
+            
+            <Entry x:Name="entry"
+                    Grid.Row="15"
+                    Placeholder="Enter text"/>
+
+            <ActivityIndicator  Grid.Row="16" IsRunning="true" />
+
+            <ProgressBar Progress="0.5"  Grid.Row="17" ProgressColor="Orange"/>
+
+            <Picker x:Name="picker"
+                    
+                    Grid.Row="18" 
+                    Title="Select a monkey">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Baboon</x:String>
+                        <x:String>Capuchin Monkey</x:String>
+                        <x:String>Blue Monkey</x:String>
+                        <x:String>Squirrel Monkey</x:String>
+                        <x:String>Golden Lion Tamarin</x:String>
+                        <x:String>Howler Monkey</x:String>
+                        <x:String>Japanese Macaque</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <IndicatorView x:Name="indicatorView"
+               MaximumVisible="6"  Grid.Row="19"  />
         </Grid>
     </ScrollView>
 </ContentPage>
