@@ -99,7 +99,7 @@
             <ProgressBar Progress="0.5"  Grid.Row="17" ProgressColor="Orange"/>
 
             <Picker x:Name="picker"
-                    BackgroundColor="Black"
+                    BackgroundColor="Black" TextColor="White"
                     Grid.Row="18" 
                     Title="Select a monkey">
                 <Picker.ItemsSource>
